@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Clash</title>
+
     <!-- poppins font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,88 +41,108 @@
 
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins bg-blue-950">
     <header>
-
+        <!-- there is nothing in the header section  -->
     </header>
 
-    <main>
-        <section class="flex justify-center">
+    <main class="w-2/5 mx-auto h-screen bg-[url('images/background.png')] bg-center bg-cover bg-no-repeat ">
+        
+        <!-- intro section -->
+        <section id="homeScreen" class="">
 
-            <div
-                class="w-2/5 h-screen bg-[url('images/background.png')] bg-center bg-cover bg-no-repeat border border-white">
+            <div class="">
 
-                <div id="alpha-home" class="flex flex-col justify-center items-center gap-6 h-full hidden">
+                <div id="alpha-home" class="flex flex-col justify-center items-center gap-6 h-screen">
 
-                    <h1 class="w-[170%] text-center font-anton text-9xl capitalize border border-white">alphabet clash
+                    <h1 class="w-[170%] text-center font-anton text-9xl capitalize ">alphabet clash
                     </h1>
                     <p id="p">Unleash your keyboard KungFu : press Enter to Play</p>
                     <button id="button"
-                        class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-white text-black border-transparent">Play
+                        class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-white text-black border-transparent" onclick="play()">Play
                         Now</button>
 
                 </div>
             </div>
         </section>
 
-        <section class="w-[80%] mx-auto flex flex-col justify-center items-center gap-5 border border-white">
-            <!-- screen -->
-            <div
-                class="artboard artboard-horizontal w-full h-[350px] border-[20px] border-[#010313cc] rounded-2xl mx-auto bg-[#ffffffb3] flex justify-center items-center">
-                <p class="text-9xl font-extrabold">Y</p>
+        <!-- Playground Section -->
+        <section id="play-section" class="hidden">
+            <div class="w-[80%] mx-auto flex flex-col items-center justify-center gap-4 ">
+                <!-- screen -->
+                <div
+                    class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313cc] rounded-2xl bg-[#ffffffb3]  relative">
+
+                    <p id="random-alphabet" class="h-full text-purple-700 text-9xl font-extrabold flex justify-center items-center p-4">Y</p>
+
+                    <p class="w-[30%] rounded-b-lg text-white bg-black font-semibold absolute top-0 left-[50%] translate-x-[-50%] ">Don't watch keyboard while Playing</p>
+
+                </div>
+                
+                <!-- keyboard starts here-->
+                <div>
+                    <div class="flex justify-center gap-1 my-1 w-full">
+                        <kbd id="q" class="kbd text-blue-950">q</kbd>
+                        <kbd id="w" class="kbd text-blue-950">w</kbd>
+                        <kbd id="e" class="kbd text-blue-950">e</kbd>
+                        <kbd id="r" class="kbd text-blue-950">r</kbd>
+                        <kbd id="t" class="kbd text-blue-950">t</kbd>
+                        <kbd id="y" class="kbd text-blue-950">y</kbd>
+                        <kbd id="u" class="kbd text-blue-950">u</kbd>
+                        <kbd id="i" class="kbd text-blue-950">i</kbd>
+                        <kbd id="o" class="kbd text-blue-950">o</kbd>
+                        <kbd id="p" class="kbd text-blue-950">p</kbd>
+                    </div>
+                    <div class="flex justify-center gap-1 my-1 w-full">
+                        <kbd id="a" class="kbd text-blue-950">a</kbd>
+                        <kbd id="s" class="kbd text-blue-950">s</kbd>
+                        <kbd id="d" class="kbd text-blue-950">d</kbd>
+                        <kbd id="f" class="kbd text-blue-950">f</kbd>
+                        <kbd id="g" class="kbd text-blue-950">g</kbd>
+                        <kbd id="h" class="kbd text-blue-950">h</kbd>
+                        <kbd id="j" class="kbd text-blue-950">j</kbd>
+                        <kbd id="k" class="kbd text-blue-950">k</kbd>
+                        <kbd id="l" class="kbd text-blue-950">l</kbd>
+                    </div>
+                    <div class="flex justify-center gap-1 my-1 w-full">
+                        <kbd id="z" class="kbd text-blue-950">z</kbd>
+                        <kbd id="x" class="kbd text-blue-950">x</kbd>
+                        <kbd id="c" class="kbd text-blue-950">c</kbd>
+                        <kbd id="v" class="kbd text-blue-950">v</kbd>
+                        <kbd id="b" class="kbd text-blue-950">b</kbd>
+                        <kbd id="n" class="kbd text-blue-950">n</kbd>
+                        <kbd id="m" class="kbd text-blue-950">m</kbd>
+                        <kbd id="/" class="kbd text-blue-950">/</kbd>
+                    </div>
+                </div>
+                <!-- keyboard ends here -->
+
+                <div class="w-[250%] flex justify-between ">
+                    <button onclick="click()" class="btn text-white bg-[#894189]">
+                        life
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+
+                    <button onclick="click()" class="btn text-white bg-[#360490]" >Score $</button>
+                </div>
             </div>
-            <!-- keyboard starts here-->
-            <div>
-                <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd">q</kbd>
-                    <kbd class="kbd">w</kbd>
-                    <kbd class="kbd">e</kbd>
-                    <kbd class="kbd">r</kbd>
-                    <kbd class="kbd">t</kbd>
-                    <kbd class="kbd">y</kbd>
-                    <kbd class="kbd">u</kbd>
-                    <kbd class="kbd">i</kbd>
-                    <kbd class="kbd">o</kbd>
-                    <kbd class="kbd">p</kbd>
-                </div>
-                <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd">a</kbd>
-                    <kbd class="kbd">s</kbd>
-                    <kbd class="kbd">d</kbd>
-                    <kbd class="kbd">f</kbd>
-                    <kbd class="kbd">g</kbd>
-                    <kbd class="kbd">h</kbd>
-                    <kbd class="kbd">j</kbd>
-                    <kbd class="kbd">k</kbd>
-                    <kbd class="kbd">l</kbd>
-                </div>
-                <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd">z</kbd>
-                    <kbd class="kbd">x</kbd>
-                    <kbd class="kbd">c</kbd>
-                    <kbd class="kbd">v</kbd>
-                    <kbd class="kbd">b</kbd>
-                    <kbd class="kbd">n</kbd>
-                    <kbd class="kbd">m</kbd>
-                    <kbd class="kbd">/</kbd>
-                </div>
-            </div>
-            <!-- keyboard ends here -->
+        </section>
 
-            <div class="w-1/2 flex justify-between border border-white">
-                <button class="btn">
-                    life
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                </button>
-
-                <button class="btn">
-                    Score $
-
-                </button>
+        <!-- Score Section -->
+        <section id="score" class="hidden">
+            <div class="h-screen border border-white flex justify-center items-center">
+                <div
+                    class=" w-[60%] mx-auto rounded-xl flex flex-col justify-center items-center gap-4 py-6 bg-[#ffffff33]">
+                    <p class="text-5xl font-extrabold">Score : 14</p>
+                    <button id="button"
+                        class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md bg-white text-black border-transparent">Play
+                        Now</button>
+                    <p>Practice will make you pro</p>
+                </div>
             </div>
         </section>
     </main>
@@ -129,22 +150,18 @@
     <footer>
 
     </footer>
-    <script>
+    <script src="utility.js"></script>
+    <script src="Scripts/alpha.js"></script>
+    <script src="Scripts/play.js"></script>
+    <!-- <script>
         const liveButton = document.getElementById('button')
         liveButton.addEventListener('click', function () {
 
             document.getElementById('alpha-home').innerText;
 
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
 
-<!-- AMARO PORANO JAHA CHAY
-TUMI TAI TUMI TAI GO 
-AMARO PORANO JAHA CHAY
-
-AMI TOMARO  BIROHA=E ROHIBO BILINO
-TOMATE KORIBO BASH
-DIRGHO DIVISHO DIRGO  -->
