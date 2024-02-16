@@ -25,9 +25,9 @@
     </style>
 
 </head>
-<body class="min-h-screen mx-auto bg-blue-950 text-white border border-white">
+<body class=" min-h-screen mx-auto bg-blue-950 text-white border border-white">
 
-    <header class=" mx-auto bg-[#7c3aed] bg-center bg-cover bg-no-repeat ">
+    <header class="max-w-[1200px] mx-auto bg-[#7c3aed] bg-center bg-cover bg-no-repeat ">
         <nav>
             <div class="navbar">
                 <div class="navbar-start">
@@ -68,24 +68,24 @@
         </nav>
     </header>
     
-    <div class="mt-10 flex flex-col justify-center items-center gap-24 bg-blue-950 ">
+    <div class="max-w-[1200px] mx-auto mt-10 flex flex-col justify-center items-center gap-24 bg-blue-950 ">
         
-        <button class="btn btn-success" onclick="play()">Play Now</button>
+        <button class="btn btn-success" onclick="play(),refresh()">Play Now</button>
 
         <div id="letter-container" class="w-1/2 py-4 font-mono text-yellow-500 text-9xl font-black text-center  rounded-3xl bg-[#3366cc]">
             
 
         </div>
 
-        <button id="try-again" class="btn btn-error hidden text-white font-semibold" onclick="play()">Try Again</button>
+        <button id="try-again" class="btn btn-error hidden text-white font-semibold" onclick="play(), refresh()" >Try Again</button>
     </div>
     
-    <section class="flex justify-between items-center my-16 mx-10">
+    <section class="max-w-[1200px] mx-auto px-20 flex justify-between items-center my-16 ">
         <div class="px-6 py-2 text-center bg-[#b21757] rounded-full border border-white">
-            Score : <span>0</span>
+            Score : <span id="new-score">0</span>
         </div>
         <div class="px-6 py-2 text-center bg-[#b21757] rounded-full border border-white">
-            Lives <i class="fa-solid fa-heart"></i> : <span></span>
+            Lives <i class="fa-solid fa-heart"></i> : <span id="lives">3</span>
         </div>
     </section>
 

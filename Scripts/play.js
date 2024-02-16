@@ -9,8 +9,9 @@
 let letter;
 function play(){
 
-    document.getElementById('letter-container').classList.remove('text-red-400')
+    document.getElementById('letter-container').classList.remove('text-red-400','text-7xl')
     document.getElementById('try-again').classList.add('hidden')
+    
 
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabet = alphabetString.split('')
@@ -34,17 +35,42 @@ document.addEventListener('keyup', function(event){
 
     if(typedLetter === expectedLetter){
         console.log('success')
-        increaseScore()
+
+        let newScoreString = document.getElementById('new-score').innerText
+        const score = parseInt(newScoreString)
+        const newScore = score+1;
+        console.log(newScore)
+        document.getElementById('new-score').innerText=newScore;
+
         play()
     }
     else{
         console.log('Try again')
-        document.getElementById('letter-container').innerText='Wrong'
-        document.getElementById('letter-container').classList.add('text-red-400','text-9xl')
-        document.getElementById('try-again').classList.remove('hidden')
+
+        let remainingLivesString = document.getElementById('lives').innerText;
+        let remainingLives = parseInt(remainingLivesString);
+        remainingLives-=1;
+        console.log('lives',remainingLives);
+        document.getElementById('lives').innerText=remainingLives;
+        
+
+  
+
+        if(remainingLives>0){
+            play()
+        }
+        else{
+            document.getElementById('letter-container').innerText='Play again'
+            document.getElementById('letter-container').classList.add('text-red-400','text-7xl')
+            document.getElementById('try-again').classList.remove('hidden')
+            
+        }
     }
 
-    function increaseScore(){
-        
-    }
+   
 })
+
+function refresh(){
+    document.getElementById('new-score').innerText='0'
+    document.getElementById('lives').innerText='3'
+}
