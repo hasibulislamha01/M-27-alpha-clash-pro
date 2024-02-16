@@ -10,3 +10,10 @@ function showElement(elementId){
 function makeInvisible(idName){
     document.getElementById(idName).classList.add('hidden')
 }
+
+function removeBgColor(elementId){
+    const element = document.getElementById(elementId)
+    element.classList.remove('bg-amber-500')
+}
+
+

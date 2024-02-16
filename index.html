@@ -42,13 +42,51 @@
 </head>
 
 <body class="font-poppins bg-blue-950">
-    <header>
-        <!-- there is nothing in the header section  -->
+
+    <header class=" mx-auto bg-[#7c3aed] bg-center bg-cover bg-no-repeat ">
+        <nav>
+            <div class="navbar">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li>
+                                <a>Parent</a>
+                                <ul class="p-2">
+                                    <li><a>Submenu 1</a></li>
+                                    <li><a>Submenu 2</a></li>
+                                </ul>
+                            </li>
+                            <li><a>Item 3</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl font-mono">ALPHABET CLASH</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Item 1</a></li>
+                        
+                        <li><a href="practice.html">Beginners game</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn">Logout</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main class="w-2/5 mx-auto h-screen bg-[url('images/background.png')] bg-center bg-cover bg-no-repeat ">
-        
-        <!-- intro section -->
+
+        <!-- Alpha-clash banner section -->
         <section id="homeScreen" class="">
 
             <div class="">
@@ -59,7 +97,8 @@
                     </h1>
                     <p id="p">Unleash your keyboard KungFu : press Enter to Play</p>
                     <button id="button"
-                        class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-white text-black border-transparent" onclick="play()">Play
+                        class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-white text-black border-transparent"
+                        onclick="play()">Play
                         Now</button>
 
                 </div>
@@ -73,12 +112,16 @@
                 <div
                     class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313cc] rounded-2xl bg-[#ffffffb3]  relative">
 
-                    <p id="random-alphabet" class="h-full text-purple-700 text-9xl font-extrabold flex justify-center items-center p-4">Y</p>
+                    <p id="random-alphabet"
+                        class="h-full text-purple-700 text-9xl font-extrabold flex justify-center items-center p-4">Y
+                    </p>
 
-                    <p class="w-[30%] rounded-b-lg text-white bg-black font-semibold absolute top-0 left-[50%] translate-x-[-50%] ">Don't watch keyboard while Playing</p>
+                    <p
+                        class="w-[30%] rounded-b-lg text-white bg-black font-semibold absolute top-0 left-[50%] translate-x-[-50%] ">
+                        Don't watch keyboard while Playing</p>
 
                 </div>
-                
+
                 <!-- keyboard starts here-->
                 <div>
                     <div class="flex justify-center gap-1 my-1 w-full">
@@ -127,7 +170,7 @@
                         </svg>
                     </button>
 
-                    <button onclick="click()" class="btn text-white bg-[#360490]" >Score $</button>
+                    <button onclick="click()" class="btn text-white bg-[#360490]">Score <span id="current-score">0</span></button>
                 </div>
             </div>
         </section>
@@ -150,9 +193,9 @@
     <footer>
 
     </footer>
-    <script src="utility.js"></script>
     <script src="Scripts/alpha.js"></script>
-    <script src="Scripts/play.js"></script>
+    <script src="utility.js"></script>
+
     <!-- <script>
         const liveButton = document.getElementById('button')
         liveButton.addEventListener('click', function () {
@@ -164,4 +207,3 @@
 </body>
 
 </html>
-
